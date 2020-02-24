@@ -1,0 +1,30 @@
+[
+    {
+        "args": {
+            "names": [
+                "model",
+                "view",
+                "ctrl",
+            ],
+            "scope": ".",
+            "extensions": [
+                "cpp",
+                "cxx",
+                "cc",
+                "c",
+                "hpp",
+                "hxx",
+                "hh",
+                "h",
+                "ipp",
+                "inl",
+                "m",
+                "mm"
+            ]
+        },
+        "command": "switch_file",
+        "keys": [
+            "alt+o"
+        ]
+    }
+]
