@@ -1,0 +1,10 @@
+{
+    // switch_file
+    "switch_file_names": [
+        "model",
+        "const",
+        "view",
+        "ctrl"
+    ],
+    "switch_file_scope": "."
+}

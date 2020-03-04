@@ -1,12 +1,6 @@
 [
     {
         "args": {
-            "names": [
-                "model",
-                "view",
-                "ctrl",
-            ],
-            "scope": ".",
             "extensions": [
                 "cpp",
                 "cxx",

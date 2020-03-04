@@ -71,11 +71,11 @@ class SwitchFileCommand(sublime_plugin.WindowCommand):
             change = names[idx]
             new_name = name + change + ext
             new_path = walk_open_file(new_name, scope)
-            if new_path and os.path.exists(new_path):
+            if os.path.exists(new_path):
                 self.window.open_file(new_path, flags=sublime.FORCE_GROUP)
                 break
 
-    def run(self, extensions=[], names=[], scope="."):
+    def run(self, extensions=[]):
         if not self.window.active_view():
             return
         self.fname = self.window.active_view().file_name()
@@ -83,5 +83,7 @@ class SwitchFileCommand(sublime_plugin.WindowCommand):
             return
         if len(extensions) > 0:
             self.switch_file_by_ext(extensions)
-        if len(names) > 0:
-            self.switch_file_by_name(names, scope)
+        settings = sublime.load_settings("SublimeDefaultEx.sublime-settings")
+        names = settings.get("switch_file_names", [])
+        scope = settings.get("switch_file_scope", ".")
+        self.switch_file_by_name(names, scope)
