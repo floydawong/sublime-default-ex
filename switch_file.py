@@ -71,7 +71,7 @@ class SwitchFileCommand(sublime_plugin.WindowCommand):
             change = names[idx]
             new_name = name + change + ext
             new_path = walk_open_file(new_name, scope)
-            if os.path.exists(new_path):
+            if new_path and os.path.exists(new_path):
                 self.window.open_file(new_path, flags=sublime.FORCE_GROUP)
                 break
 
